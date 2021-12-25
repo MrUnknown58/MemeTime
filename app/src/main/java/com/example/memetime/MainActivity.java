@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     }
     private void loadmeme()
     {
+        ImageView ib=findViewById(R.id.like);
+        ib.setImageResource(R.drawable.like);
         ProgressBar p=findViewById(R.id.pb);
         p.setVisibility(View.VISIBLE);
         // Instantiate the RequestQueue.

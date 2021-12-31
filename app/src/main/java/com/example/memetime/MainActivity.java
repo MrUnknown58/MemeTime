@@ -3,7 +3,6 @@ package com.example.memetime;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -54,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                         ImageView image = (ImageView) findViewById(R.id.imageView);
                         Glide.with(MainActivity.this).load(url).into(image);
-                        p.setVisibility(View.GONE);
                     }
                 }, new Response.ErrorListener() {
 
@@ -66,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
 // Add the request to the RequestQueue.
         queue.add(jsonObjectRequest);
+        p.setVisibility(View.GONE);
     }
 
     public void onnext(View view) {
@@ -82,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         }
         catch(Exception e)
         {
-            Toast.makeText(getApplicationContext(), "INTENT FAILED", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "SHARING FAILED", Toast.LENGTH_LONG).show();
         }
     }
 
